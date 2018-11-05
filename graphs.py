@@ -17,8 +17,21 @@ print(nx.info(g))
 print("-----------------------\n")
 
 
+#Write for gephi
+nx.write_gexf(g, "text.gexf")
+
+#DRAWING
+
+'''
+#Calculate layout (Slow Part!)
+print("Calculating layout..")
+sp = nx.spring_layout(g)
+
 print("Drawing graph..")
-#Drawing
-plt.figure(figsize = (5, 5))
-nx.draw(g, with_labels=True)
+
+plt.figure(figsize = (7, 7))
+plt.axis('off')
+nx.draw(g, with_labels=False, pos=sp, node_size = 20)
 plt.show()
+
+'''
