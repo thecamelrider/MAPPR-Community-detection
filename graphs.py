@@ -6,17 +6,23 @@ This is a temporary script file.
 """
 
 import networkx as nx
+from networkx.algorithms import community
 import matplotlib.pyplot as plt
 
 print("Reading graph....")
 
 #Read from txt    
-g = nx.read_edgelist('facebook_combined.txt', create_using = nx.Graph(), nodetype = int)
+g = nx.read_edgelist('amazon_combined', create_using = nx.Graph(), nodetype = int)
 print("Graph loaded!")
 print(nx.info(g))
 print("-----------------------\n")
 
+#detect communities and label nodes
+print("detecting communities")
+#communities_gen = community.girvan_newman(g)
+#top_level_comm = next(communities_gen)
 
+print("Done!")
 #Write for gephi
 nx.write_gexf(g, "text.gexf")
 
